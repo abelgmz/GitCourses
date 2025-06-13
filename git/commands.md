@@ -24,6 +24,8 @@
 * **branch**
   * It's a copy of the project.
 * **.gitignore. -** file where files can be ignored. It is in the root of the repo.
+* **fast-forward merge. - ** The basic merge
+* **Recursive merge. - ** Searches commits and commit changes from branches into one.
 
 # Git stages.
 1. **Working Directory**
@@ -71,19 +73,22 @@
 * **git commit -a -m "comment"**
   * Commits the changes directly.
   * -a. - adds the file to staging area
-*  **git diff fileName**
+* **git diff fileName**
    * Compare changes in the file.
 * **git diff commitId**
   * Shows the difference between actual work and referenced commitId (e54a1b6).
- * **git diff commitId commitId**
+* **git diff commitId commitId**
   * Shows the differences between these two commits.
- * **git diff HEAD~X HEAD~X**
+* **git diff HEAD~X HEAD~X**
   * Shows the differences between these two commits X commits ago before HEAD/MASTER.
 * **git status**
   * Shows the status of the actual work.
   * If we want changes from remote repo, execute git fetch.
 * **git log**
   * Shows previous commits made by users.
+* **git log --graph**
+  * Shows the logs with a grpahic interface.
+  * Shows the branches that have been merged.
 * **git show commitId**
   * Shows detailed information of the commit.
 * **git show HEAD~X**
@@ -108,6 +113,23 @@
   * Switch to a branch.
 * **git checkout -b branchName**
   * Creates and switches to a branch.
+* **git checkout --track origin/branchName**
+  * Switch to branche locally and track it from origin.
+* **git merge sourceBranch destinationBranch**
+  * Merges a branch into another branch.
+  * Adds sourceBranch changes to destionationBranch.
+* **git merge --abort**
+  * Aborts merging branches.
+* **git branch -d branchName**
+  * Deletes a branch.
+* **git tag -a tagName -m "message"
+  * Creates a tag.
+* **git tag -a tagName commitId "message"
+  * Creates a tag in a specific commitId.
+* **git show tagName**
+  * Shows detailed information about a commit or tag.
+* **git log --pretty=oneline**
+  * Shows logs in oneline.
 * **.gitignore**
   * .dll - will ignore .dll files
   * folderName/ - will ignore an entire folder.
@@ -115,7 +137,6 @@
   * *.log - will ignore any files with the .log extension.
   * Ignore will only work when files is not in repository.
   * If file is already in repository, it has to be deleted.
-
    
 # Remote repositories
 * **git remote add remoteName repositoryUrl**
@@ -128,11 +149,32 @@
   * branch. - master.
 * **git branch --set-upstream-to=origin/master master**
   * Local branch will be tracking remote branch for new changes.
+* **git push remoteName branchName**
+  * Push to GitHub the specific branch.
+* **git push branchName --tags**
+  * Pusth to GitHub all tags creates locally.
 * **git pull**
   * Gets last version of the branch from GitHub directly.
 * **git fetch**
-  * Downloads all changes from remote repo.
+  * Downloads all changes from remote repo including existing branches.
   * Files are not shown as available, just aware of their existance.
 * **git clone repositoryUrl**
   * Clones a remote repository.
   * Create new folder where the repo will be downloaded.
+ 
+# Merge conflicts.
+* **Merge conflict meaning**     
+<<<<< HEAD ( branch who will receive changes from other branch - where I am)
+content 1 
+content 2  
+====== (end receipting branch)  
+content 3  (receiving branch)
+&gt;&gt;&gt;&gt;&gt; other branch (end of the branch to merge)  
+* **Steps to resolve a merge conflict**  
+1. Open file with merge conflicts.
+2. Decide which changes will be kept.
+3. Remove conflict markers (<<< === >>>)
+4. Add changes and make a commit.
+* **To save changes**
+  * Just delete the content added by git (<< == >>) and format the code.
+  * Add to stage area and commmit.
