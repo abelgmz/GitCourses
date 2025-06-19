@@ -24,8 +24,9 @@
 * **branch**
   * It's a copy of the project.
 * **.gitignore. -** file where files can be ignored. It is in the root of the repo.
-* **fast-forward merge. - ** The basic merge
-* **Recursive merge. - ** Searches commits and commit changes from branches into one.
+* **fast-forward merge. -** The basic merge
+* **Recursive merge. -** Searches commits and commit changes from branches into one.
+* **Markdown. -** option to write templates, comments, README or anything.
 
 # Git stages.
 1. **Working Directory**
@@ -122,9 +123,9 @@
   * Aborts merging branches.
 * **git branch -d branchName**
   * Deletes a branch.
-* **git tag -a tagName -m "message"
+* **git tag -a tagName -m "message"**
   * Creates a tag.
-* **git tag -a tagName commitId "message"
+* **git tag -a tagName commitId "message"**
   * Creates a tag in a specific commitId.
 * **git show tagName**
   * Shows detailed information about a commit or tag.
@@ -178,3 +179,21 @@ content 3  (receiving branch)
 * **To save changes**
   * Just delete the content added by git (<< == >>) and format the code.
   * Add to stage area and commmit.
+
+# Markdown
+* **bold double asterisk.**
+* __bold double underscore__
+* *italic one underscore*
+* _italic one underscore_
+* **_bold italic_**
+* ~~Scratch text with a tilde~~
+* > "Quote something with **>**"
+* Unordered lists with *, + or -
+* Ordered list with **N.**
+* Checkboxes with **[ ]**
+* Links with **[displayName] (url)**
+* Title 1 | Title 2 | Title 3
+  --- | :---: | ---:
+  Some text | Some other text | Text
+* Images with **![] (url)**
+* Block of code with ``` language (C#, html, etc) some code```
